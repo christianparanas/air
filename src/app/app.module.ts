@@ -14,6 +14,10 @@ import { AuthComponent } from './admin/auth/auth.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { CustomersComponent } from './admin/customers/customers.component';
+import { FlightsComponent } from './admin/flights/flights.component';
+import { BookingsComponent } from './admin/bookings/bookings.component';
+import { AdminNavigationComponent } from './components/admin-navigation/admin-navigation.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { HotToastModule } from '@ngneat/hot-toast';
     AuthComponent,
     DashboardComponent,
     LandingComponent,
+    CustomersComponent,
+    FlightsComponent,
+    BookingsComponent,
+    AdminNavigationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HotToastModule.forRoot()],
   providers: [],

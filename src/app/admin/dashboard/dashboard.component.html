@@ -1,16 +1,39 @@
 <div class="">
-  <div class="bg-slate-800 text-slate-50 py-4">
-    <div class="w-[1200px] mx-auto flex justify-between items-center">
-      <h1 class="font-bold text-2xl flex items-center">
-        <i class="fad fa-plane text-[18px]"></i>
-        <div class="ml-2 relative">Airlines System <span class="absolute top-0 text-sm text-purple-900 w-fit -right-[105px] bg-purple-400 px-2 rounded-md shadow-sm">Admin Panel</span></div>
-      </h1>
+  <app-admin-navigation></app-admin-navigation>
 
+  <div class="w-[1200px] mx-auto py-20">
+    <h1 class="font-black text-3xl text-slate-700">Dashboard</h1>
+
+    <div class="grid grid-cols-[400px_1fr_1fr] gap-5 mt-5">
       <div
-        class="bg-gray-700 px-3 py-2 rounded-lg cursor-pointer hover:bg-red-800 transition-all"
-        (click)="logout()"
+        class="bg-slate-500 text-white p-10 rounded-xl shadow-lg hover:bg-slate-500/80 cursor-pointer transition-all flex justify-between"
+        routerLink="/admin/flights"
       >
-        Logout
+      <i class="fad fa-plane-departure text-[90px]"></i>
+        <div class="">
+          <div class="font-bold text-4xl">{{ flights.length }}</div>
+          <span class="">{{ flights.length > 1 ? "Flights" : "Flight" }}</span>
+        </div>
+      </div>
+      <div
+        class="bg-purple-500 text-white p-10 rounded-xl shadow-lg hover:bg-purple-500/80 cursor-pointer transition-all  flex justify-between"
+        routerLink="/admin/bookings"
+      >
+      <i class="fad fa-atlas text-[90px]"></i>
+        <div class="">
+          <div class="font-bold text-4xl">100</div>
+          <span>Booked Flights</span>
+        </div>
+      </div>
+      <div
+        class="bg-orange-500 text-white p-10 rounded-xl shadow-lg hover:bg-orange-500/80 cursor-pointer transition-all flex justify-between"
+        routerLink="/admin/customers"
+      >
+      <i class="fad fa-users text-[90px]"></i>
+        <div class="">
+          <div class="font-bold text-4xl">{{ users.length }}</div>
+          <span>{{ users.length > 1 ? "Customers" : "Customer" }}</span>
+        </div>
       </div>
     </div>
   </div>
