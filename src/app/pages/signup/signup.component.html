@@ -3,25 +3,33 @@
 
   <div class="w-[1200px] mx-auto grid place-items-center h-[500px]">
     <div class="">
-      <form class="bg-white w-[400px] p-4 rounded-lg shadow-md">
+      <form
+        class="bg-white w-[400px] p-4 rounded-lg shadow-md"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="signupForm"
+        autocomplete="off"
+      >
         <h1 class="font-bold text-2xl text-slate-700 mb-4">Sign Up</h1>
 
         <input
           type="text"
           placeholder="Name"
           class="w-full py-3 px-4 outline-none rounded-md bg-slate-100 text-sm mb-4"
+          formControlName="name"
           required
         />
         <input
           type="email"
           placeholder="Email"
           class="w-full py-3 px-4 outline-none rounded-md bg-slate-100 text-sm mb-4"
+          formControlName="email"
           required
         />
         <input
           type="password"
           placeholder="Password"
           class="w-full py-3 px-4 outline-none rounded-md bg-slate-100 text-sm mb-4"
+          formControlName="password"
           required
         />
         <button

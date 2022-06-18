@@ -1,7 +1,7 @@
 <div class="bg-slate-800 text-slate-50 py-4">
   <div class="w-[1200px] mx-auto flex justify-between items-center">
     <h1 class="font-bold text-2xl flex items-center">
-      <img src="../../../assets/plane.png" alt="" class="w-[30px]" />
+      <i class="fad fa-plane text-[18px]"></i>
       <div class="ml-2">Airlines System</div>
     </h1>
 
@@ -12,14 +12,26 @@
       <div class="hover:text-slate-300 cursor-pointer" routerLink="/faqs">
         FAQs
       </div>
-      <div class="ml-3 cursor-pointer hover:text-slate-300" routerLink="/login">
+      <div
+        class="ml-3 cursor-pointer hover:text-slate-300"
+        routerLink="/login"
+        *ngIf="!isLogin()"
+      >
         Login
       </div>
       <div
+        *ngIf="!isLogin()"
         class="bg-gray-700 px-3 py-2 rounded-lg cursor-pointer hover:bg-purple-800 transition-all"
         routerLink="/signup"
       >
         Sign up
+      </div>
+      <div
+        *ngIf="isLogin()"
+        class="bg-gray-700 px-3 py-2 rounded-lg cursor-pointer hover:bg-purple-800 transition-all"
+        routerLink="/home"
+      >
+        Homepage
       </div>
     </div>
   </div>
