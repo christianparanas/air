@@ -28,7 +28,7 @@ export class ClientauthService {
       }
     }
 
-    this.setSession()
+    this.setSession(res.id)
     this.router.navigate(['/home']);
   }
 
@@ -39,8 +39,6 @@ export class ClientauthService {
     };
 
     const result = this.emailExists(data.email)
-
-    console.log(result)
 
     if(result != undefined && result != "empty") {
       return {
@@ -84,13 +82,15 @@ export class ClientauthService {
     return users
   }
 
-  setSession() {
+  setSession(id: any) {
     const expires_at = moment().add(7200, 'second');
+    localStorage.setItem('userId', JSON.stringify(id));
     localStorage.setItem('expires_at', JSON.stringify(expires_at.valueOf()));
   }
 
   logout() {
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('userId');
     this.router.navigate(['/']);
   }
 

@@ -11,7 +11,7 @@
       >
       <i class="fad fa-plane-departure text-[90px]"></i>
         <div class="">
-          <div class="font-bold text-4xl">{{ flights.length }}</div>
+          <div class="font-bold text-4xl">{{ flights.length ? flights.length : 0 }}</div>
           <span class="">{{ flights.length > 1 ? "Flights" : "Flight" }}</span>
         </div>
       </div>
@@ -21,7 +21,7 @@
       >
       <i class="fad fa-atlas text-[90px]"></i>
         <div class="">
-          <div class="font-bold text-4xl">100</div>
+          <div class="font-bold text-4xl">{{ bookings.length ? bookings.length : 0 }}</div>
           <span>Booked Flights</span>
         </div>
       </div>
@@ -31,7 +31,7 @@
       >
       <i class="fad fa-users text-[90px]"></i>
         <div class="">
-          <div class="font-bold text-4xl">{{ users.length }}</div>
+          <div class="font-bold text-4xl">{{ users.length ? users.length : 0 }}</div>
           <span>{{ users.length > 1 ? "Customers" : "Customer" }}</span>
         </div>
       </div>

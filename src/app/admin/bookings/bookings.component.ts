@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/shared/services/users.service';
+import { BookingsService } from 'src/app/shared/services/bookings.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-bookings',
@@ -7,18 +9,20 @@ import { UsersService } from 'src/app/shared/services/users.service';
   styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent implements OnInit {
-  users: any = null
+  bookings: any = null
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private bookingsService: BookingsService) { }
 
   ngOnInit(): void {
-    this.getCustomers()
+    this.getBookings()
   }
 
-  getCustomers() {
-    this.users = this.usersService.getUsers()
+  getBookings() {
+    this.bookings = this.bookingsService.getBookings()
+  }
 
-    console.log(this.users)
+  date(param: any) {
+    return moment(param).format('MMMM Do YYYY, h:mm:ss a');
   }
 
 }

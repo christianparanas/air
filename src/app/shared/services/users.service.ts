@@ -17,4 +17,9 @@ export class UsersService {
 
     return users
   }
+
+  getUserId() {
+    const res: any = localStorage.getItem('userId')
+    return JSON.parse(res)
+  }
 }

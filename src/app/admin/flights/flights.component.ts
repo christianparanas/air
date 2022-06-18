@@ -38,9 +38,11 @@ export class FlightsComponent implements OnInit {
     this.flightForm = new FormGroup({
       from: new FormControl('', Validators.required),
       to: new FormControl('', Validators.required),
-      fare: new FormControl(1200, Validators.required),
-      date: new FormControl(1200, Validators.required),
+      fare: new FormControl(0, Validators.required),
+      date: new FormControl('', Validators.required),
       coupon: new FormControl(''),
+      type: new FormControl('deal'),
+      status: new FormControl('confirmed'),
     });
   }
 
